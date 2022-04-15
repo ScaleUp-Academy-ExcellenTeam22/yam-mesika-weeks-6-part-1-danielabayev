@@ -2,9 +2,16 @@ from collections.abc import Iterable
 from typing import Optional
 
 
-def my_filter(function: Optional[callable], iterable_value: Iterable) -> list:
+def my_filter(function: Optional[callable], iterable_object: Iterable) -> list:
+    """
+    This function receive function or None and iterable and return new list which contains the value receive true in
+    the function or if reveive None the values of items their value not equal to false.
+    :param function: The function - receive item and return boolean.
+    :param iterable_object: Iterable object to check its items.
+    :return: the items receive true in the function or their value is true if None received instead of function.
+    """
     new_list = []
-    for value in iterable_value:
+    for value in iterable_object:
         if function:
             if function(value):
                 new_list.append(value)
