@@ -1,7 +1,11 @@
 def words_length(line: str) -> list[int]:
+    """
+    This function receive line, split to words (including punctuation) and return list of the words length.
+    :param line: The line to split to words and check their length.
+    :return: List of the length of the words.
+    """
     words = line.split()
-    words_length_lst = [len(word) for word in words]
-    return words_length_lst
+    return [len(word) for word in words]
 
 
 if __name__ == "__main__":
