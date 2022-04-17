@@ -1,9 +1,17 @@
 import time
+from typing import Optional
 
 
-def timer(function, *args):
+def timer(function: Optional[callable], *args, **kwargs) -> float:
+    """
+    This function receive function and parameters and calculate the time the function that to do with these parameters.
+    :param function: The function to make.
+    :param args: Parameters to the function.
+    :param kwargs: Parameters to the function.
+    :return: The time take to the function to run.
+    """
     start = time.time()
-    function(*args)
+    function(*args, **kwargs)
     end = time.time()
     return end - start
 
